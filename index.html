@@ -150,6 +150,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://jacklam.xyz/2021/04/23/resolve-docker-no-swap-limit-support-issue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="jacklam">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="jack">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/23/resolve-docker-no-swap-limit-support-issue/" class="post-title-link" itemprop="url">Resolve docker No swap limit support issue</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-04-23 12:34:01 / Modified: 12:42:24" itemprop="dateCreated datePublished" datetime="2021-04-23T12:34:01+08:00">2021-04-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>此方法只在 ubuntu 20.04 测试过，请谨慎使用。</p>
+<ol>
+<li><p>编辑 <code>/etc/default/grub</code> 文件，找到下面这一行，在原有内容后添加 <code>cgroup_enable=memory swapaccount=1</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">GRUB_CMDLINE_LINUX&#x3D;&quot;vga&#x3D;792 console&#x3D;tty0 console&#x3D;ttyS0,115200n8 net.ifnames&#x3D;0 noibrs cgroup_enable&#x3D;memory swapaccount&#x3D;1&quot;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
+<li><p>保存编辑文件，并更新 grub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure></li>
+<li><p>重启服务器</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
     <link itemprop="mainEntityOfPage" href="https://jacklam.xyz/2021/03/31/linux-common-commands-summary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,10 +240,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-03-31 11:37:57 / Modified: 11:46:06" itemprop="dateCreated datePublished" datetime="2021-03-31T11:37:57+08:00">2021-03-31</time>
+              <time title="Created: 2021-03-31 11:37:57" itemprop="dateCreated datePublished" datetime="2021-03-31T11:37:57+08:00">2021-03-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-23 12:42:24" itemprop="dateModified" datetime="2021-04-23T12:42:24+08:00">2021-04-23</time>
+              </span>
 
           
 
@@ -288,14 +361,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
